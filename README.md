@@ -33,7 +33,7 @@ Once the project is running there are 2 available endpoints:
 * http://localhost:8080/api/v1/shoe/new
 * http://localhost:8080/api/v1/shoe/true-to-size/{key}
 
-# /api/v1/shoe/new
+## /api/v1/shoe/new
 Creates a new shoe entry in the database
 
 * Method: POST
@@ -53,7 +53,7 @@ Making a POST request to the endpoint [http://localhost:8080/api/v1/shoe/new](ht
 a new entry being inserted into the `shoe` table with a display value of 'Adidas Yeezy', a key of 'adidas-yeezy', 
 and a 'true_to_size_score' of 2.
 
-# /api/v1/shoe/true-to-size/{key}
+## /api/v1/shoe/true-to-size/{key}
 Returns the TrueToSizeCalculation for all shoes with the provided key.
 
 * Method: GET
