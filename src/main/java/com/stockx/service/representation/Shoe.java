@@ -8,7 +8,7 @@ public class Shoe {
     private String display;
     private String key;
     @JsonProperty("true_to_size_score")
-    private String trueToSizeScore;
+    private Integer trueToSizeScore;
 
     public String getDisplay() {
         return display;
@@ -26,11 +26,11 @@ public class Shoe {
         this.key = key;
     }
 
-    public String getTrueToSizeScore() {
+    public Integer getTrueToSizeScore() {
         return trueToSizeScore;
     }
 
-    public void setTrueToSizeScore(String trueToSizeScore) {
+    public void setTrueToSizeScore(Integer trueToSizeScore) {
         this.trueToSizeScore = trueToSizeScore;
     }
 }
