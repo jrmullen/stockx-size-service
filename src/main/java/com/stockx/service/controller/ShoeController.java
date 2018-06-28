@@ -39,12 +39,12 @@ public class ShoeController {
                 return ResponseEntity.ok(score.get());
             }
 
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.badRequest().build();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.badRequest().build();
     }
 
 }
