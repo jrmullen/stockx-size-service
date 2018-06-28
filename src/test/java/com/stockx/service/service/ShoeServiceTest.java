@@ -3,6 +3,7 @@ package com.stockx.service.service;
 import com.stockx.service.dao.SimpleDao;
 import com.stockx.service.entity.ShoeEntity;
 import com.stockx.service.representation.Shoe;
+import com.stockx.service.testUtilities.TestDataFactory;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,7 +38,7 @@ public class ShoeServiceTest {
     public void setUp() throws Exception {
         resultList.add(BigDecimal.valueOf(2.2222222));
 
-        shoe = buildShoe();
+        shoe = TestDataFactory.buildShoe();
     }
 
     @Test
@@ -61,15 +62,5 @@ public class ShoeServiceTest {
         assertEquals(shoe.getDisplay(), entity.getDisplay());
         assertEquals(shoe.getKey(), entity.getKey());
         assertEquals(shoe.getTrueToSizeScore(), entity.getTrueToSizeScore());
-    }
-
-    private Shoe buildShoe() {
-        Shoe shoe = new Shoe();
-
-        shoe.setDisplay("Shoe");
-        shoe.setKey("shoe");
-        shoe.setTrueToSizeScore(3);
-
-        return shoe;
     }
 }
