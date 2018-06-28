@@ -1,5 +1,6 @@
 package com.stockx.service.controller;
 
+import com.stockx.service.entity.ShoeEntity;
 import com.stockx.service.representation.Shoe;
 import com.stockx.service.service.ShoeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,13 @@ public class ShoeController {
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public ResponseEntity<?> createShoe(@Valid @RequestBody Shoe shoe) {
 
+        ShoeEntity entity = shoeService.createShoe(shoe);
 
-        return ResponseEntity.ok("It worked!");
+        if (entity != null) {
+            return ResponseEntity.ok().build();
+        }
+
+        return ResponseEntity.badRequest().build();
     }
 
     @RequestMapping(value = "/true-to-size/{key}", method = RequestMethod.GET)

@@ -1,8 +1,11 @@
 package com.stockx.service.service;
 
 import com.stockx.service.dao.SimpleDao;
+import com.stockx.service.entity.ShoeEntity;
+import com.stockx.service.representation.Shoe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.Query;
 import java.math.BigDecimal;
@@ -31,5 +34,18 @@ public class ShoeService {
         BigDecimal average = (BigDecimal) result.get(0);
 
         return Optional.of(average);
+    }
+
+    @Transactional
+    public ShoeEntity createShoe(Shoe shoe) {
+        ShoeEntity entity = new ShoeEntity();
+
+        entity.setDisplay(shoe.getDisplay());
+        entity.setKey(shoe.getKey());
+        entity.setTrueToSizeScore(shoe.getTrueToSizeScore());
+
+        simpleDao.create(entity);
+
+        return entity;
     }
 }
