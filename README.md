@@ -51,7 +51,7 @@ Creates a new shoe entry in the database
 
 Making a POST request to the endpoint [http://localhost:8080/api/v1/shoe/new](http://localhost:8080/api/v1/shoe/new) using the above shoe JSON body will result in 
 a new entry being inserted into the `shoe` table with a display value of 'Adidas Yeezy', a key of 'adidas-yeezy', 
-and a 'true_to_size_score' of 2.
+and a true_to_size_score of 2.
 
 ## /api/v1/shoe/true-to-size/{key}
 Returns the TrueToSizeCalculation for all shoes with the provided key.
@@ -63,5 +63,5 @@ Returns the TrueToSizeCalculation for all shoes with the provided key.
 * Failure response: `400`
 
 Making a POST request to the endpoint [http://localhost:8080/api/v1/shoe/true-to-size/adidas-yeezy](http://localhost:8080/api/v1/shoe/true-to-size/adidas-yeezy) will result in
-a response body the TrueToSizeCalculation for all shoes in the `shoe` table with a key of `adidas-yeezy`
+a response body containing the TrueToSizeCalculation for all shoes in the `shoe` table with a key of `adidas-yeezy`
 
